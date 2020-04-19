@@ -19,10 +19,11 @@ def by_state(dataset, state):
 	dates = list(dataset.columns[3:].unique())
 	statewise_report = pd.DataFrame(columns=dates, index = states)
 	# import pdb; pdb.set_trace()
-	print(dataset['Province_State'].value_counts())
-	for st in states:.sort
-		if st in dataset['Province_State']:
-			print(dataset.Province_State.mode())
+	for st in states:
+		state = dataset[dataset['Province_State'].str.contains(st)]
+		print(type(state))
+		# for dt in dates:
+
 	return statewise_report
 
 by_state(confirmed_us, "Alabama")

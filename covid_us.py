@@ -17,13 +17,26 @@ deaths_us = get_data('time_series_covid19_deaths_US.csv')
 def by_state(dataset, state):
 	states = dataset['Province_State'].unique()
 	states.sort()
-	dates = list(dataset.columns[3:].unique())
-	# statewise_report = pd.DataFrame(columns=dates, index = states)
-	# import pdb; pdb.set_trace()
 	st = dataset[dataset['Province_State'] == state]#.str.contains(st)]
 	return st
 
 # print(by_state(confirmed_us, "New York"))
+
+def by_day(dataset, state, columnName):
+	# import pdb; pdb.set_trace()
+	dates = dataset.columns[3:]
+	v_name = "Day"
+	i = 1
+	columns = []
+	for x in range(len(dates)):
+		columns.append(v_name+str(i))
+		i+=1
+	df_byDay = pd.DataFrame(column=columnName, index=dates)
+
+
+	return df_byDay
+
+print(by_day(confirmed_us,by_state(confirmed_us, "Newyork"), "ToTal Confirmed"))
 
 def get_county(column):
 	return column.split(',')[0]

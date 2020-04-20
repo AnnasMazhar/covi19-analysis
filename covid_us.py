@@ -29,8 +29,7 @@ def get_county(column):
 	return column.split(',')[0]
 
 def by_county(dataset, county):
-	# county = list(dataset['Combined_Key'].apply(lambda x:get_county(x)))
 	cty = dataset[dataset['Combined_Key'].str.match(county)]
-	print(cty)
-
+	return cty
+	
 by_county(confirmed_us,"Wyoming")

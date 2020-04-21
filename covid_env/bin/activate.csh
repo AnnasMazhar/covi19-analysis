@@ -10,15 +10,15 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/phantom/Desktop/python/covid19/covi19-analysis/covid_env"
+setenv VIRTUAL_ENV '/home/phantom/Desktop/python/covid19/covi19-analysis/covid_env'
 
 set _OLD_VIRTUAL_PATH="$PATH:q"
 setenv PATH "$VIRTUAL_ENV:q/bin:$PATH:q"
 
 
 
-if ("" != "") then
-    set env_name = ""
+if ('' != "") then
+    set env_name = ''
 else
     set env_name = '('"$VIRTUAL_ENV:t:q"') '
 endif
